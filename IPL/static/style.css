@@ -1,0 +1,120 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("img.jpg");
+    background-size: cover; /* Ensures the background image covers the entire area */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 35%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Form styling */
+.form-group, .form-group-inline {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #333;
+}
+
+select, input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border 0.3s;
+}
+
+select:hover, input[type="number"]:hover {
+    border-color: #007bff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+
+.form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group-inline {
+    width: 48%;
+    margin-bottom: 12px;
+}
+
+.result {
+    text-align: center;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: rgba(248, 249, 250, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result-team {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.result-team span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 75%;
+    }
+
+    .form-group-inline {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+

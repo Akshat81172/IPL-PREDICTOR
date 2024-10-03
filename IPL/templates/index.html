@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Win Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>IPL Win Predictor</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="batting_team">Batting Team</label>
+                <select name="batting_team" id="batting_team">
+                    {% for team in teams %}
+                        <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bowling_team">Bowling Team</label>
+                <select name="bowling_team" id="bowling_team">
+                    {% for team in teams %}
+                        <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">Host City</label>
+                <select name="city" id="city">
+                    {% for city in cities %}
+                        <option value="{{ city }}">{{ city }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-inline">
+                <div class="form-group-inline">
+                    <label for="target">Target</label>
+                    <input type="number" name="target" id="target" required>
+                </div>
+                <div class="form-group-inline">
+                    <label for="score">Current Score</label>
+                    <input type="number" name="score" id="score" required>
+                </div>
+                <div class="form-group-inline">
+                    <label for="overs">Overs Completed</label>
+                    <input type="number" step="0.1" name="overs" id="overs" required>
+                </div>
+                <div class="form-group-inline">
+                    <label for="wickets">Wickets Out</label>
+                    <input type="number" name="wickets" id="wickets" required>
+                </div>
+            </div>
+            <button type="submit">Predict Probability</button>
+        </form>
+        {% if win and loss %}
+        <div class="result">
+            <h2>Prediction Results:</h2>
+            <p class="result-team">{{ batting_team }} Win Probability: <span>{{ win }}%</span></p>
+            <p class="result-team">{{ bowling_team }} Win Probability: <span>{{ loss }}%</span></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
